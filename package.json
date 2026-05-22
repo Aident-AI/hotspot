@@ -1,0 +1,52 @@
+{
+  "name": "@aident-ai/hotspot",
+  "version": "0.1.0",
+  "description": "Mirror one active Git worktree into a stable checkout for local dev servers.",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "bin": {
+    "hotspot": "./dist/src/cli.js"
+  },
+  "files": [
+    ".agents/skills",
+    "dist/src",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aident-AI/hotspot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aident-AI/hotspot/issues"
+  },
+  "homepage": "https://github.com/Aident-AI/hotspot#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "pnpm build && node --test dist/tests/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "git",
+    "worktree",
+    "sync",
+    "dev-server",
+    "hotspot"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "commander": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
